@@ -1,32 +1,20 @@
 (function(){
 
-    var heading =document.getElementById("heading").style = "margin-left:43vw;color: red " ;
-    // heading
-
+    document.getElementById("heading").style = "margin-left:43vw;color: red " ;
+    
     let table = document.createElement("table");
-    // // table.id = "tab";
-    // table.style.borderCollapse = "collapse";
-    // table.style.border = "2px solid red";
-
-    // table.setAttribute("style" , "border-collapse : collapse , border : 1px solid red");
-
-    function func(){
-        console.log("created");
-    }
-
-    func();
-
     table.style =" border-collapse : collapse ;margin-left :26vw;margin-top:10%";
 
     let thead = document.createElement("thead");
     let tbody = document.createElement("tbody");
 
-    // document.getElementsByTagName("table").style.border = '1px solid red';
 
     table.appendChild(thead);
     table.appendChild(tbody);
 
     document.getElementById("body").appendChild(table);
+
+    //table headings
 
     let row1 = document.createElement("tr");
     let head1 = document.createElement("th");
@@ -34,13 +22,10 @@
     head1.appendChild(thnode1);
     head1.style = "border :1px solid black; padding : 20px;";
     
-
     let head2= document.createElement("th");
     let thnode2 = document.createTextNode("Age");
     head2.appendChild(thnode2);
     head2.style = "border :1px solid black; padding : 20px;";
-    
-
 
     let head3 = document.createElement("th");
     let thnode3 = document.createTextNode("DOB");
@@ -57,13 +42,11 @@
     head5.appendChild(thnode5);
     head5.style = "border :1px solid black; padding : 20px;";
 
-
     row1.appendChild(head1);
     row1.appendChild(head2);
     row1.appendChild(head3);
     row1.appendChild(head4);
     row1.appendChild(head5);
-    // row1.appendChild(head1);
     thead.appendChild(row1);
 
 
@@ -103,6 +86,7 @@
     row2.appendChild(data5);
 
     tbody.appendChild(row2);
+
 
     // row3
 
