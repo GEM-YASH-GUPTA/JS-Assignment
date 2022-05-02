@@ -1,9 +1,9 @@
 (function(){
 
-    document.getElementById("heading").style = "margin-left:43vw;color: red " ;
+    document.getElementById("heading").style = "text-align:center" ;
     
     let table = document.createElement("table");
-    table.style =" border-collapse : collapse ;margin-left :26vw;margin-top:10%";
+    table.style =" border-collapse : collapse ;margin-left : 25%; width : 50%; margin-top : 10%; height : 50% ; background-color:#d1e0e0";
 
     let thead = document.createElement("thead");
     let tbody = document.createElement("tbody");
