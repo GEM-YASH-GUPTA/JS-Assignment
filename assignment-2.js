@@ -4,17 +4,11 @@ var phone = document.getElementById("inputPhone");
 var names = document.getElementById("inputName");
 var email = document.getElementById("inputEmail");
 
-// function isEmpty(e){
-//     e.preventDefault();
-//     var a = document.getElementById("inputPhone").value;
-//     // var hasNumber = /[^a-zA-Z]/; 
-//     // if(a ===""  || hasNumber.test(a) == true)
-//     // {
-//     //     alert("enter");
-//     // }
+var tablediv = document.getElementById("tablediv");
+tablediv.style = "overflow: scroll; height: 250px;";
 
-    // console.log(validPhone(a));
-// }
+var heading = document.getElementById("heading");
+heading.style = "text-align:center; color:goldenrod;"; 
 
 function required(x){
     if(x===""){
@@ -40,7 +34,6 @@ function validEmail(x){
 }
 
 function validPhone(x){
-    // var phones=/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/;
     var phones = /[2-9]{2}\d{8}/;
     if((phones.test(x) == true && x.length===10) || x.length ==0 ){
         return true;
@@ -50,39 +43,15 @@ function validPhone(x){
 
 
 const showError = (input,message) =>{
-    // const errlabel = input.;
-    // add the error class
     input.classList.remove('is-valid');
     input.classList.add('is-invalid');
     alert(message);
 };
 const showSuccess = (input) =>{
-    // const errlabel = input.;
-    // add the error class
     input.classList.remove('is-invalid');
     input.classList.add('is-valid');
-    // alert(message);
 };
 
-// showError(names , "sadasd");
-// showSuccess(names , "sdas");
-
-// function checkName(){
-//     var result = false;
-//     // var temp = names;
-//     if(required(names)){
-//         showError(names , "Name is required");
-//     }
-//     else if(!validName(names)){
-//         showError(names , "Enter your name in valid format");
-//     }
-//     else{
-//         showSuccess(names);
-//         result=true;
-//     }
-//     return result;
-
-// }
 function checkName(){
     var result = false;
     var temp = names.value.trim();
@@ -97,7 +66,6 @@ function checkName(){
         result=true;
     }
     return result;
-    
 }
 
 function checkEmail(){
@@ -114,10 +82,7 @@ function checkEmail(){
         result=true;
     }
     return result;
-    
 }
-
-
 
 function checkPhone(){
     var result = false;
@@ -134,10 +99,7 @@ function checkPhone(){
 }
 
 
-
-
 var count=1;
-
 form.addEventListener('submit' , function(e){
     e.preventDefault();
     let isEmailValid = checkEmail();
@@ -154,37 +116,18 @@ form.addEventListener('submit' , function(e){
             "Phone" : inputPhone.value,
             "Email" : inputEmail.value,
         }
-        // localStorage.setItem('details' , JSON.stringify(details));
-
         var array = JSON.parse(localStorage.getItem('details') || '[]');
         array.push(details);
         localStorage.setItem('details' , JSON.stringify(array));
-        
-
-        
-        // array = JSON.parse(localStorage.getItem('details') || '[]');
-        // console.log(array);
-        // var tabs =document.getElementById("sec-tabs");
-
-        // var obj =JSON.parse(localStorage.getItem('details'));
-        // const test = Object.values(obj);
-        // console.log(test);
-        // Object.values(obj).forEach(val => tabs.appendChild(document.createTextNode(val)));
-
-        // var text = document.createTextNode(Object.values(obj)) ;
-        // tabs.appendChild(text);
-        // console.log(obj.Name);
     }
 
     
    var tbody = document.getElementById("tbody");
    var table = document.getElementById("table");
    var storage =  JSON.parse(localStorage.getItem('details'));
-//    var count=0;
 
    if(isFormValid){
     var i = storage.length-1;   
-//    for(var i =0 ; i<storage.length ; i++){
        var row = document.createElement('tr');
 
        var column = document.createElement('td');
@@ -211,27 +154,4 @@ form.addEventListener('submit' , function(e){
 
        tbody.appendChild(row);
    }
-    
-//    }
-//    console.log(data);
-
-    // for ( var i = 0, len = localStorage.length; i < len; ++i ) {
-    //     var text = document.createTextNode( localStorage.getItem( localStorage.key( i ) ) );
-        
-    //   }
-
-      
-
-   
-
-    // for(var key in details)
-    // {
-    //     var text = document.createTextNode(localStorage.getItem('details[0]'));
-    //     tabs.appendChild(text);
-
-    // }
-
 })
-// var tabs =document.getElementById("sec-tabs");
-
-// console.log
