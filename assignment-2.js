@@ -130,13 +130,13 @@ function checkPhone(){
         showSuccess(phone);
         result=true;
     }
-    return true;
+    return result;
 }
 
 
 
 
-
+var count=1;
 
 form.addEventListener('submit' , function(e){
     e.preventDefault();
@@ -147,12 +147,91 @@ form.addEventListener('submit' , function(e){
     let isFormValid =  isEmailValid && isPhoneValid && isNameValid ;
 
     if(isFormValid){
-        let details = {
+        var array = [];
+
+        var details = {
             "Name" : inputName.value,
             "Phone" : inputPhone.value,
             "Email" : inputEmail.value,
         }
-        localStorage.setItem('details' , JSON.stringify(details));
+        // localStorage.setItem('details' , JSON.stringify(details));
+
+        var array = JSON.parse(localStorage.getItem('details') || '[]');
+        array.push(details);
+        localStorage.setItem('details' , JSON.stringify(array));
+        
+
+        
+        // array = JSON.parse(localStorage.getItem('details') || '[]');
+        // console.log(array);
+        // var tabs =document.getElementById("sec-tabs");
+
+        // var obj =JSON.parse(localStorage.getItem('details'));
+        // const test = Object.values(obj);
+        // console.log(test);
+        // Object.values(obj).forEach(val => tabs.appendChild(document.createTextNode(val)));
+
+        // var text = document.createTextNode(Object.values(obj)) ;
+        // tabs.appendChild(text);
+        // console.log(obj.Name);
     }
+
+    
+   var tbody = document.getElementById("tbody");
+   var table = document.getElementById("table");
+   var storage =  JSON.parse(localStorage.getItem('details'));
+//    var count=0;
+
+   if(isFormValid){
+    var i = storage.length-1;   
+//    for(var i =0 ; i<storage.length ; i++){
+       var row = document.createElement('tr');
+
+       var column = document.createElement('td');
+       var textnode = document.createTextNode(count);
+       column.appendChild(textnode);
+       row.appendChild(column);
+       count++;
+
+       var column = document.createElement('td');
+       var textnode = document.createTextNode(storage[i].Name);
+       column.appendChild(textnode);
+       row.appendChild(column);
+      
+
+       var column = document.createElement('td');
+       var textnode = document.createTextNode(storage[i].Phone);
+       column.appendChild(textnode);
+       row.appendChild(column);
+
+       var column = document.createElement('td');
+       var textnode = document.createTextNode(storage[i].Email);
+       column.appendChild(textnode);
+       row.appendChild(column);
+
+       tbody.appendChild(row);
+   }
+    
+//    }
+//    console.log(data);
+
+    // for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+    //     var text = document.createTextNode( localStorage.getItem( localStorage.key( i ) ) );
+        
+    //   }
+
+      
+
+   
+
+    // for(var key in details)
+    // {
+    //     var text = document.createTextNode(localStorage.getItem('details[0]'));
+    //     tabs.appendChild(text);
+
+    // }
+
 })
+// var tabs =document.getElementById("sec-tabs");
+
 // console.log

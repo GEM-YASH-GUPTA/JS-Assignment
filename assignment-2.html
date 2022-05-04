@@ -10,32 +10,29 @@
 
 </head>
 <body>
-    <div class="container overflow-hidden">
-        <div class="row gy-5">
-          <div class="col-6">
-            <div class="p-3 border bg-light">Custom column padding</div>
-          </div>
-          <div class="col-6">
-            <div class="p-3 border bg-light">Custom column padding</div>
-          </div>
-          <div class="col-6">
+    <div class="">
+        
+      
+        <div class="row">
+          <div class="col p-5 m-5">
             <div class="p-3 border bg-light">
+              <div class="p-3 mb-5 border bg-light">Custom column padding</div>
                 <form>
                     <div class="row mb-3">
                       <label for="inputName" class="col-sm-2 col-form-label ">Name : </label>
-                      <div class="col-sm-10">
+                      <div class="col-sm-6">
                         <input type="text" class="form-control" id="inputName">
                       </div>
                     </div>
                     <div class="row mb-3">
                       <label for="inputEmail" class="col-sm-2 col-form-label">Email :</label>
-                      <div class="col-sm-10">
+                      <div class="col-sm-6">
                         <input type="text" class="form-control " id="inputEmail">
                       </div>
                     </div>
                     <div class="row mb-3">
                       <label for="inputPhone" class="col-sm-2 col-form-label">Mobile No. :</label>
-                      <div class="col-sm-10">
+                      <div class="col-sm-6">
                         <input type="text" class="form-control" id="inputPhone">
                       </div>
                     </div>
@@ -45,10 +42,32 @@
                   </form>
             </div>
           </div>
-          <div class="col-6">
-            <div class="p-3 border bg-light">Custom column padding</div>
+          <div class="col m-5 p-5">
+            <div class="p-3 border bg-light" id="sec-tabs">
+              <div class="p-3 mb-5 border bg-light">Test Table</div>
+
+              <div   style="overflow: scroll; height: 200px;" id="testtable">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <!-- <th scope="col">#</th> -->
+                      <th scope="col">Sno.</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Email</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbody">
+                    
+                  </tbody>
+                </table>
+              </div>
+
+              
+            </div>
           </div>
         </div>
+        
       </div>
 
       <script src="assignment-2.js"></script>
