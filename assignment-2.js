@@ -5,7 +5,7 @@ var names = document.getElementById("inputName");
 var email = document.getElementById("inputEmail");
 
 var tablediv = document.getElementById("tablediv");
-tablediv.style = "overflow: scroll; height: 250px;";
+tablediv.style = "overflow: scroll; height: 250px;scroll:auto;";
 
 var heading = document.getElementById("heading");
 heading.style = "text-align:center; color:goldenrod;"; 
